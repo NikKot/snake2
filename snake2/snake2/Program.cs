@@ -16,22 +16,14 @@ namespace snake2
             Point p2 = new Point(4, 5, '*');
             p2.Draw();
 
-            List<int> numList = new List<int>();
-            numList.Add(0);
-            numList.Add(1);
-            numList.Add(2);
+            HorizontalLinecs Vertical = new HorizontalLinecs(4, 10, 5, '+');
+            Vertical.Draw();
 
-            int x = numList[0];
-            int y = numList[1];
-            int z = numList[2];
-
-            foreach(int i in numList)
-            {
-                Console.WriteLine(i);
-            }
-
+            VerticalLine Horizontal = new VerticalLine(4, 10, 5, '+');
+            Horizontal.Draw();
 
             Console.ReadLine();
+
         }
 
 
