@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace snake2
 {
-    class HorizontalLinecs
+    class HorizontalLinecs : Figure
     {
-
-       List<Point> pList;
 
         public HorizontalLinecs(int xLeft, int xRight, int y, char sym)
 
@@ -19,22 +17,8 @@ namespace snake2
             for (int i = xLeft; i <= xRight; i++)
             {
                 Point p = new Point(i, y, sym);
-                p.Draw();
+                pList.Add(p);
             }
         }
-
-        public void Draw()
-
-        {
-            foreach (Point i in pList)
-
-            {
-                i.Draw();
-            }
-        }
-
-
-
-
     }
 }

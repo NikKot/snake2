@@ -10,17 +10,18 @@ namespace snake2
     {
         static void Main(string[] args)
         {
-            Point p1 = new Point(1, 3, '#');
-            p1.Draw();
+             
+            //отрисовываем рамочку
 
-            Point p2 = new Point(4, 5, '*');
-            p2.Draw();
+            HorizontalLinecs V1 = new HorizontalLinecs(0, Console.BufferWidth -1 , 0, '+');
+            HorizontalLinecs V2 = new HorizontalLinecs(0, Console.BufferWidth - 1, Console.BufferHeight - 8975, '+');
+            VerticalLine H1 = new VerticalLine(0, Console.BufferHeight - 8975, 0, '+');
+            VerticalLine H2 = new VerticalLine(0, Console.BufferHeight - 8975, Console.BufferWidth - 1, '+');
 
-            HorizontalLinecs Vertical = new HorizontalLinecs(4, 10, 5, '+');
-            Vertical.Draw();
-
-            VerticalLine Horizontal = new VerticalLine(4, 10, 5, '+');
-            Horizontal.Draw();
+            V1.Draw();
+            V2.Draw();
+            H1.Draw();
+            H2.Draw();
 
             Console.ReadLine();
 
