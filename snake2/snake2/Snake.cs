@@ -17,7 +17,7 @@ namespace snake2
 
             pList = new List<Point>();
 
-            for (int i = 0; i <= lenght; i++)
+            for (int i = 0; i < lenght; i++)
             {
                 Point p = new Point(tail);
                 p.Move(i, direction);

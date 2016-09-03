@@ -57,7 +57,6 @@ namespace snake2
         {
             sym = ' ';
             Draw();
-
         }
 
     }
