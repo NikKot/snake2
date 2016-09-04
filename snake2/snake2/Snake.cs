@@ -42,8 +42,8 @@ namespace snake2
         {
             Point head = pList.Last();
             Point NextStep = new Point(head);
-            head.Move(1, direction);
-            return head;
+            NextStep.Move(1, direction);
+            return NextStep;
         }
 
         public void HandleKey(ConsoleKey key)
