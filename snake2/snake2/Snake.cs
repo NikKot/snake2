@@ -30,11 +30,11 @@ namespace snake2
             Point tail = pList.First();
             pList.Remove(tail);
 
-            Point head = GetNextPoint();
-            pList.Add(head);
+            Point NextStep = GetNextPoint();
+            pList.Add(NextStep);
 
             tail.Clear();
-            head.Draw();
+            NextStep.Draw();
 
         }
 
@@ -65,6 +65,22 @@ namespace snake2
                 direction = Direction.DOWN;
             }
 
+        }
+
+        public Boolean Eat(Point Food)
+        {
+            Point head = GetNextPoint();
+
+            if (head.IsHit(Food))
+            {
+                Food.sym = head.sym;
+                pList.Add(Food);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
     }

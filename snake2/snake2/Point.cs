@@ -59,5 +59,10 @@ namespace snake2
             Draw();
         }
 
+        public bool IsHit(Point Food)
+        {
+            return this.x == Food.x && this.y == Food.y;
+        }
+
     }
 }
