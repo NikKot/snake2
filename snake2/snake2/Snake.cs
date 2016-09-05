@@ -83,5 +83,20 @@ namespace snake2
             }
         }
 
+        public bool IsHitTial()
+        {
+            Point NextPoint = GetNextPoint();
+
+            foreach (Point p in pList)
+            {
+                if (NextPoint.IsHit(p))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
     }
 }

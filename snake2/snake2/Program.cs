@@ -11,18 +11,12 @@ namespace snake2
     {
         static void Main(string[] args)
         {
-             
+
+
+
             //отрисовываем рамочку
-
-            HorizontalLinecs V1 = new HorizontalLinecs(0, Console.BufferWidth -1 , 0, '+');
-            HorizontalLinecs V2 = new HorizontalLinecs(0, Console.BufferWidth - 1, Console.BufferHeight - 8975, '+');
-            VerticalLine H1 = new VerticalLine(0, Console.BufferHeight - 8975, 0, '+');
-            VerticalLine H2 = new VerticalLine(0, Console.BufferHeight - 8975, Console.BufferWidth - 1, '+');
-
-            V1.Draw();
-            V2.Draw();
-            H1.Draw();
-            H2.Draw();
+            Walls walls = new Walls(Console.BufferWidth, Console.BufferHeight);
+            walls.Draw();
 
             Point p = new Point(6, 5, '*');
 
@@ -35,6 +29,11 @@ namespace snake2
 
             while (true)
             {
+                if (walls.IsHit(snake) || snake.IsHitTial())
+                {
+                    break;
+                }
+
                 if (snake.Eat(Food))
                 {
                     snake.Draw();
@@ -53,7 +52,7 @@ namespace snake2
                     ConsoleKeyInfo Key = Console.ReadKey();
                     snake.HandleKey(Key.Key);
                 }
-            }
+           }
         }
     }
 }
